@@ -110,4 +110,20 @@ public class Gestor {
             index++;
         }
     }
+
+    public void moverFigura(String nombre){
+        boolean encontrada = false;
+        for (int i = 0; i < listaFiguras.size(); i++) {
+            if (listaFiguras.get(i).getNombre() == nombre) {
+                System.out.println("Figura movida: " + listaFiguras.get(i).getNombre());
+                listaFiguras.get(i).mover();
+                encontrada = true;
+                break;
+            }
+        }
+
+        if (!encontrada) {
+            System.out.println("No se encontró ninguna figura con el nombre: " + nombre);
+        }
+    }
 }

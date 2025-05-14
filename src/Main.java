@@ -7,7 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String pause;
         int menu = -1;
-        while (menu != 9) {
+        while (menu != 10) {
             System.out.println("=== GESTION DE LAS FIGURAS ===");
             System.out.println("1) Añadir figura");
             System.out.println("2) Eliminar figura");
@@ -17,7 +17,8 @@ public class Main {
             System.out.println("6) Figura con mayor perimetro");
             System.out.println("7) Listar figuras");
             System.out.println("8) Listar figuras tipo");
-            System.out.println("9) Salir");
+            System.out.println("9) Mover figura");
+            System.out.println("10) Salir");
             System.out.println("================================");
             System.out.print("Elije una opción: ");
 
@@ -174,11 +175,23 @@ public class Main {
                     break;
 
                 case 9:
+                    System.out.println("=== Mover Figura ===");
+
+                    System.out.println("Pulse Enter para continuar...");
+                    String nombreMov = sc.nextLine();
+                    
+                    gestor.moverFigura(nombreMov);
+                    
+                    System.out.println("Pulse Enter para continuar...");
+                    pause = sc.nextLine();
+                    break;
+
+                case 10:
                     System.out.println("=== SALIR ===");
 
                     System.out.println("Pulse Enter para continuar...");
                     pause = sc.nextLine();
-                    break;
+                    break;    
 
                 default:
                     System.out.println("Error: Opción no válida, intentalo de nuevo.");
